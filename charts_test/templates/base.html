@@ -7,11 +7,17 @@
 
 {% endblock %}
 
-<div class="container">
-	<a href="/index">Upload data</a>
-	<a href="/charts">Charts</a>
+<div class="btn-group btn-group-justified" role="group" aria-label="...">
+	<div class="btn-group" role="group">
+		<a class="btn btn-default" href="/index">Upload data</a>
+	</div>
+	<div class="btn-group" role="group">
+		<a class="btn btn-default" href="/charts">Charts</a>
+	</div>
 </div>
 <hr>
+
+
 
 {% block content %}
 {% endblock %}
