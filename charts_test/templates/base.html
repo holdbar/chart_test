@@ -1,7 +1,17 @@
 
+{% block head %}
 
-<a href="/index">Upload data</a>
-<a href="/charts">Charts</a>
+<link href="/static/css/bootstrap.min.css" rel="stylesheet" media="screen">
+<script src="/static/js/bootstrap.min.js"></script>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+{% endblock %}
+
+<div class="container">
+	<a href="/index">Upload data</a>
+	<a href="/charts">Charts</a>
+</div>
 <hr>
+
 {% block content %}
 {% endblock %}
