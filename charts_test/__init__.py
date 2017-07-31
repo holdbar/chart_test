@@ -5,7 +5,7 @@ from flask_sqlalchemy import SQLAlchemy
 
 
 app = Flask(__name__)
-app.config.from_object('config.DevelopConfig')
+app.config.from_object('config.ProductionConfig')
 db = SQLAlchemy(app)
 
 
