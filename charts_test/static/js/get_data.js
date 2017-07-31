@@ -4,11 +4,11 @@ var yData = [];
                     
 
 $(function() {
-        $('.filter').click(function() {
+        $(".filter").click(function() {
             $.ajax({
-                url: '/get_chart_data',
-                data: $('form').serialize(),
-                type: 'POST',
+                url: "/get_chart_data",
+                data: $("form").serialize(),
+                type: "POST",
                 dataType: "html",
                 success: function(response) {
                     console.log(response);
@@ -18,22 +18,23 @@ $(function() {
                         yData.push(Number(value));
                         xData.push(name);
                     });
-                    $('#container').highcharts({
+                    $("#container").highcharts({
                         chart: {
-                            type: 'column'
+                            type: "column"
                         },
                         title: {
-                            text: 'Cities and Numbers'
+                            text: "SPAM in the cities"
                         },
                         xAxis: {
                             categories: xData
                         },
                         yAxis: {
                             title: {
-                                text: 'Numbers'
+                                text: "Quantity"
                             }
                         },
                         series: [{
+                            name: "SPAM",
                             data: yData
                         }, ],
                     });

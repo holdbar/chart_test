@@ -11,7 +11,7 @@ from .models import Regions, Cities, Values
 class RegionFilterForm(Form):
     """Region filter form."""
 
-    region = SelectField('Регион', choices=[])
+    region = SelectField("Region", choices=[])
 
 
 
@@ -19,6 +19,6 @@ class RegionFilterForm(Form):
 class FileForm(Form):
     """File form."""
 
-    file = FileField('Файл', validators=[DataRequired()])
+    file = FileField("File", validators=[DataRequired()])
 
 

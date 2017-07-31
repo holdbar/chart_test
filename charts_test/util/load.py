@@ -16,8 +16,8 @@ def load_data(file_name):
     """
     region_list = []
 
-    with open('uploads/' + file_name, encoding='utf-8') as csvfile:
-        read_CSV = csv.reader(csvfile, delimiter=',')
+    with open("uploads/" + file_name, encoding="utf-8") as csvfile:
+        read_CSV = csv.reader(csvfile, delimiter=",")
         for row in read_CSV:
             region_list.append([row[0], row[1], row[2]])
     return region_list
