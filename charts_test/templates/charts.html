@@ -1,0 +1,51 @@
+
+
+{% block content %}
+
+<script src="http://code.jquery.com/jquery-1.9.1.js"></script>
+
+<script type="text/javascript">
+    $(function() {
+        $('.filter').click(function() {
+            $.ajax({
+                url: '/get_chart_data',
+                data: $('form').serialize(),
+                type: 'POST',
+                dataType: "html",
+                success: function(response) {
+                    console.log(response)
+                    var results = JSON.parse(response)
+                    //var output = ''
+                    //$.each(results, function(index, value) {
+                    //    output = output +'<br>' + '<br>' + value.start + '<br>' + value.end
+                    //});
+                    //$('#results').html(output); 
+                },
+                error: function(error) {
+                    console.log(error);
+                }
+            });
+        });
+    });
+</script> 
+
+<div class="container">
+<h3>График</h3>
+<form action="" method="POST" name="test">
+   {{ form.hidden_tag() }}
+    <p>
+        Выберите регион:<br>
+        {{ form.region() }}<br>
+    </p>
+    <p>
+        <button class="filter" type="button">Отфильтровать</button>
+    </p>
+</form>
+</div>
+<hr>
+<div class="container">
+    <p id="results"></p>
+</div>
+
+
+{% endblock %}
