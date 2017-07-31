@@ -1,3 +1,5 @@
+# -*- coding: utf-8 -*-
+
 import re
 import os
 
@@ -9,8 +11,8 @@ from werkzeug import secure_filename
 from charts_test.util.load import load_data, import_data
 
 
-
-@app.route('/', methods=['GET', 'POST'])
+@app.route('/')
+@app.route('/index', methods=['GET', 'POST'])
 def index():
     """Upload view."""
 
@@ -21,7 +23,7 @@ def index():
             import_data(load_data(filename))
             return redirect('/charts')
     return render_template('index.html',
-                            title='Импорт данных',
+                            title='Upload data',
                             form=form)
 
 
@@ -34,7 +36,7 @@ def charts():
     regions = [(r.id, r.name) for r in Regions.query.all()]
     form.region.choices = regions
     return render_template('charts.html',
-                            title='Графики',
+                            title='Charts',
                             form=form)
 
 

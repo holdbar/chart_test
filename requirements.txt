@@ -1,4 +1,4 @@
-flask
-flask_sqlalchemy
-flask_wtf
+flask==0.12.2
+flask_sqlalchemy==2.2
+flask_wtf==0.14.2
 
